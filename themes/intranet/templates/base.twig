@@ -1,0 +1,25 @@
+{% block html_head_container %}
+
+		{% include 'templates/html-header.twig' %}
+
+		{% block head %}
+
+		{% endblock %}
+
+{% endblock %}
+
+
+
+			<main role="main">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</main>
+
+			{% block footer %}
+
+    		{% include 'templates/footer.twig' %}
+
+				{{ function('wp_footer') }}
+
+			{% endblock %}

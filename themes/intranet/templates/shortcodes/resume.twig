@@ -1,0 +1,10 @@
+{% for post in posts %}
+  <article class="col-lg-4">
+    <div class="imgNews">
+      <a href="{{ post.link }}"><img src="{{ theme.link }}/Assets/img/oficina-virtual.png" alt="Texto alternativo imagen" /></a>
+    </div>
+    <h4><a href="{{ post.link }}">{{ post.title }}</a></h4>
+    <p>	{{ post.content }}</p>
+    <a href="{{ post.link }}">Leer más</a>
+  </article>
+{% endfor %}

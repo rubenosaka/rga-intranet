@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js" {{ site.language_attributes }}>
+<head>
+    <meta charset="{{ site.charset }}">
+    <title>
+        {% if wp_title %}
+            {{ wp_title }} - {{ site.name }}
+        {% else %}
+            {{ site.name }}
+        {% endif %}
+    </title>
+    <meta name="description" content="{{ site.description }}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="author" href="{{ site.theme.link }}/humans.txt">
+    <link rel="pingback" href="{{ site.pingback_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.theme.link }}/build/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.theme.link }}/build/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.theme.link }}/build/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ site.theme.link }}/build/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="{{ site.theme.link }}/build/assets/favicon/safari-pinned-tab.svg" color="#121e48">
+    <link rel="shortcut icon" href="{{ site.theme.link }}/build/assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#121e48">
+    <meta name="msapplication-config" content="{{ site.theme.link }}/build/assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#121e48">
+    {{function('wp_head')}}
+    {{function('acf_form_head')}}
+  </head>
+  <body class="{{body_class}}" data-template="base.twig">
