@@ -1,0 +1,11 @@
+.avatar-med{
+  width:150px;
+  height:150px;
+  display:inline-block;
+  background-repeat:no-repeat;
+  background-size:cover;
+  -moz-border-radius:50px;
+  -webkit-border-radius:50px;
+  -o-border-radius:50px;
+  border-radius:50px;
+}

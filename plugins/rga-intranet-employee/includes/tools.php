@@ -33,9 +33,9 @@ function employees_tools_init(){
 
         if($avatar){
           ?>
-            <div class="row">
-              <div class="col-sm-12">
-                <a href="<?php echo get_site_url(); ?>/profile/"><img src="<?php echo $avatar; ?>" alt="Avatar de <?php the_title(); ?>" /></a>
+            <div class="row tools__avatar">
+              <div class="col-sm-12 text-center">
+                <a href="<?php echo get_site_url(); ?>/profile/" style="background-image:url(<?php echo $avatar; ?>);"></a>
               </div>
             </div>
           <?php

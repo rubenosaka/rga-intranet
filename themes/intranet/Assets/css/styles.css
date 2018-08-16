@@ -112,9 +112,18 @@ li, ul, ol{
 .contetnToolMenu{
 	background-color:rgba(255,255,255,0.9);
 	width:250px;
-	height:300px;
+	min-height:300px;
 	float:left;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.tools__avatar a{
+	width:100px;
+	height:100px;
+	border-radius:100px;
+	background-position:center;
+	background-size:cover;
+	display:inline-block;
 }
 
 /* NEWS -- HOME */
