@@ -7,15 +7,13 @@
 
     foreach ($fls as $fl){$flf[]= $fl->ID;}
 
-    print_r($flf);
-
     $args  = array(
     	'numberposts'	=> 3,
     	'post_type'		=> 'employees',
       'post__not_in' => array($employee)
     );
     $the_query = new WP_Query( $args );
-    //print_r($the_query);
+
   if( $the_query->have_posts() ):
     ?>
     <section id="company-blog" class="col-lg-6 columna">
@@ -44,7 +42,7 @@
             <?php } ?>
 
 
-            <a href="" class="talk"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
+            <a href="#" class="talk" data-toggle="modal" data-target=".modal-sm"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
           </div>
         </article>
 

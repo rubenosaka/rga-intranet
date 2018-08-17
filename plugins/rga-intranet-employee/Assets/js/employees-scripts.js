@@ -1,5 +1,4 @@
 jQuery(document).ready(function(){
-
   jQuery('.friend_btn').on('click', function(e){
     e.preventDefault();
 
@@ -18,11 +17,18 @@ jQuery(document).ready(function(){
     add_coworker_as_friend(cu, employee, name, avatar, ac);
   });
 
+  jQuery('.chat_btn').on('click', function(e){
+    e.preventDefault();
+    var cu = sel.attr('data-cu'),employee = sel.attr('data-employee'), name = sel.attr('data-name'), avatar = sel.attr('data-avatar'), ac;
+
+
+  });
+
 });
 
 function add_coworker_as_friend(cu_id, id, name, avatar, ac){
   var func, html;
-  console.log(ac);
+
   var ajaxurl = 'http://'+window.location.host+'/intranet/wp-admin/admin-ajax.php';
   if (ac == 'add'){
     func = 'add_friend';
@@ -37,9 +43,10 @@ function add_coworker_as_friend(cu_id, id, name, avatar, ac){
      type: 'POST',
      data: {action : func,'cu_id': cu_id, 'id' : id  },
        success: function(response) {
-       jQuery('.notification_content').html(html);
+
+       push_notification(html, 'success '+func, 'small', 3000);
        //jQuery('.notification_content').html(response);
-       jQuery('#push_notification').fadeIn();
+
 
       },
        error: function(data) {
@@ -47,4 +54,8 @@ function add_coworker_as_friend(cu_id, id, name, avatar, ac){
 
       }
   });
+}
+
+function lets_talk(){
+  
 }
