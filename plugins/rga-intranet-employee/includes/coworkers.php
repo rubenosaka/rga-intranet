@@ -38,9 +38,9 @@
           <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
           <div class="actions">
             <?php if(in_array(get_the_ID(), $flf)){ ?>
-              <a href="" class="friend_btn" data-friend="true"><i class="fa fa-bookmark" aria-hidden="true"></i></a>
+              <a href="#" class="friend_btn" data-friend="true"><i class="fa fa-bookmark" aria-hidden="true"></i></a>
             <?php }else{ ?>
-              <a href="" class="friend_btn" data-friend="false"><i class="fa fa-bookmark-o" aria-hidden="false"></i></a>
+              <a href="#" class="friend_btn" data-friend="false"><i class="fa fa-bookmark-o" aria-hidden="false"></i></a>
             <?php } ?>
 
 
@@ -102,11 +102,11 @@ function add_friend() {
 
          $flf = array();
          foreach ($fls as $fl){$flf[]= $fl->ID;}
-         print_r($flf);
+
          if (($key = array_search($id, $flf)) !== false) {
            unset($flf[$key]);
          }
-         print_r($flf);
+
          update_field('my_friends', $flf, $cu_id);
 
          die();
