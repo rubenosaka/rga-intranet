@@ -31,7 +31,7 @@ function add_coworker_as_friend(cu_id, id, name, avatar, ac){
     func = 'remove_friend';
     html = '<div class="row"><div class="col-sm-12"><img src="'+avatar+'" class="avatar avatar-sm" />'+name+'<h5>Have just removed from your friendship list</h5></div></div>';
   }
-  console.log(func);
+
    jQuery.ajax({
      url: ajaxurl,
      type: 'POST',
