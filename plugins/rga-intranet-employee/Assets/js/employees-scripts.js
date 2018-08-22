@@ -19,8 +19,9 @@ jQuery(document).ready(function(){
 
   jQuery('.chat_btn').on('click', function(e){
     e.preventDefault();
-    var cu = sel.attr('data-cu'),employee = sel.attr('data-employee'), name = sel.attr('data-name'), avatar = sel.attr('data-avatar'), ac;
-
+    var sel = jQuery(this).closest('.employee');
+    var cu_id = sel.attr('data-cu'),ids = sel.attr('data-employee');
+    init_conversation(cu_id, ids);
 
   });
 
@@ -56,6 +57,25 @@ function add_coworker_as_friend(cu_id, id, name, avatar, ac){
   });
 }
 
-function lets_talk(){
-  
+function init_conversation(cu_id, ids){
+  console.log(ids);
+  acf.do_action('append', jQuery('.modal-content'));
+  var ajaxurl = 'http://'+window.location.host+'/intranet/wp-admin/admin-ajax.php';
+  jQuery.ajax({
+    url: ajaxurl,
+    type: 'POST',
+    data: {action : 'conversation', 'ids' : ids  },
+      success: function(response) {
+      acf.do_action('append', jQuery('.modal-content'));  
+      jQuery('.modal-content').html(response);
+      //jQuery('.notification_content').html(response);
+
+
+     },
+      error: function(data) {
+      console.log("Something goes wrong. Contact with the adeministrator to solve it.");
+
+     }
+ });
+
 }

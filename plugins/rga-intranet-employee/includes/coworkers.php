@@ -42,7 +42,7 @@
             <?php } ?>
 
 
-            <a href="#" class="talk" data-toggle="modal" data-target=".modal-sm"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
+            <a href="#" class="chat_btn" data-toggle="modal" data-target=".modal-sm"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
           </div>
         </article>
 

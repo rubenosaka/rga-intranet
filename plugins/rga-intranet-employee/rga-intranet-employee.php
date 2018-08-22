@@ -29,6 +29,24 @@ if( function_exists('acf_add_local_field_group') ):
   }
   add_action( 'init', 'employee_post_type' );
 
+  /* CUSTOM POST TYPE PARA LAS CONVERSACIONES */
+
+  function conversations() {
+    register_post_type( 'conversations',
+      array(
+        'labels' => array(
+          'name' => __( 'Conversations' ),
+          'singular_name' => __( 'Conversation' )
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'show_in_menu' => 'edit.php?post_type=employees'
+      )
+    );
+  }
+  add_action( 'init', 'conversations' );
+
+
   /**
   *
   * TAXONOMIES
@@ -184,6 +202,7 @@ if( function_exists('acf_add_local_field_group') ):
 
   include('includes/tools.php');
 
+  include('includes/conversations.php');
 
 
 endif;

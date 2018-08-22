@@ -1,5 +1,6 @@
 <?php
-
+acf_form_head();
+acf_enqueue_uploader();
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
 $currentUser =  wp_get_current_user();
